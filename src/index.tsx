@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 import 'bootstrap/dist/css/bootstrap.css';
-import './index.css';
+import './style/sass/main.scss';
 
 import App from './App';
 
