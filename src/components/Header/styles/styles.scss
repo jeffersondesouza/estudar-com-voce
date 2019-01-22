@@ -13,13 +13,14 @@
     background-color: transparent;
     background-image: linear-gradient(180deg, $downy 1rem, transparent 1rem);
   }
-  &__logo-fig {
+  &__brand {
     align-self: stretch;
     background-color: $downy; // background-color: red;
     border-radius: 5px;
     margin: 0;
     padding: 0 .5rem;
     width: 5rem;
+    background: pink;
     @include abs-midle-align;
     @include respond(phone) {
       padding: 1rem .5rem .5rem;
@@ -37,63 +38,72 @@
   }
 }
 
-.header {
-  .search {
-    padding: 0 .5rem;
-    align-self: stretch;
+.search {
+  background: red;
+
+  padding: 0 .5rem;
+  align-self: stretch;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include respond(phone) {
+    padding: 1.5rem .5rem 0 3rem;
+  }
+  &__input {
+    margin: 0 auto;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex: 1;
+    flex: 0 0 60%;
+    justify-content: space-around;
     @include respond(phone) {
-      padding: 1.5rem .5rem 0 3rem;
+      width: 30rem;
     }
-    &__input {
-      flex: 1;
-      display: flex;
+    @include respond(tab) {
+      width: 60rem;
     }
-    &__filters {}
-    &__radio-label {
-      margin: .3rem 0 0 0;
-      display: inline-flex;
-      align-items: center;
-      font-size: $font-size-default;
-      &:not(:last-child) {
-        margin-right: 2rem;
+  }
+  &__filters {
+    @include abs-midle-align;
+  }
+  &__radio-label {
+    @include abs-midle-align;
+    font-size: $font-size-default;
+    &:not(:last-child) {
+      margin-right: 5rem;
+    }
+    input {
+      display: none;
+    }
+    label {
+      position: relative;
+      padding-left: 1.75rem;
+      margin-bottom: 0;
+      &::before {
+        content: "";
+        left: 0;
+        top: 50%;
+        transform: translate(0%, -50%);
+        position: absolute;
+        width: 1.5rem;
+        height: 1.5rem;
+        background: $white;
+        border-radius: 100%;
+        border: 2px solid $downy;
       }
-      input {
-        display: none;
+      &::after {
+        content: "";
+        left: 0;
+        top: 50%;
+        transform: translate(50%, -50%);
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: transparent;
+        border-radius: 100%;
       }
-      label {
-        position: relative;
-        padding-left: 1.75rem;
-        &::before {
-          content: "";
-          left: 0;
-          top: 50%;
-          transform: translate(0%, -50%);
-          position: absolute;
-          width: 1.5rem;
-          height: 1.5rem;
-          background: $white;
-          border-radius: 100%;
-          border: 2px solid $downy;
-        }
-        &::after {
-          content: "";
-          left: 0;
-          top: 50%;
-          transform: translate(50%, -50%);
-          position: absolute;
-          width: 8px;
-          height: 8px;
-          background: transparent;
-          border-radius: 100%;
-        }
-      }
-      input:checked+label::after {
-        background: $downy;
-      }
+    }
+    input:checked+label::after {
+      background: $downy;
     }
   }
 }
