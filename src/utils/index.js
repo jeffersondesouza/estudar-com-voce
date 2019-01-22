@@ -1,0 +1,1 @@
+export { default as appString } from './app-strings';

@@ -1,0 +1,77 @@
+@mixin respond($breakpoint) {
+    @if $breakpoint == sm-phone {
+        @media only screen and (min-width: 23em) { @content }; //375px
+    }
+    @if $breakpoint == md-phone {
+        @media only screen and (min-width: 26em) { @content }; //425px
+    }
+    @if $breakpoint == phone {
+        @media only screen and (min-width: 31.25em) { @content };    //500px
+    }
+    @if $breakpoint == big-phone {
+        @media only screen and (min-width: 37.5em) { @content };    //600px
+    }
+    @if $breakpoint == tab {
+        @media only screen and (min-width: 48em) { @content }; //768px
+    }
+    @if $breakpoint == tab-land {
+        @media only screen and (min-width: 56.25em) { @content }; //900px
+    }
+    @if $breakpoint == lap {
+        @media only screen and (min-width: 64em) { @content }; //1024px
+    }
+    @if $breakpoint == md-lap {
+        @media only screen and (min-width: 75em) { @content }; //1200px
+    }
+    @if $breakpoint == desktop {
+        @media only screen and (min-width: 90em) { @content }; //1440
+    }
+    @if $breakpoint == big-desktop {
+        @media only screen and (min-width: 112.5em) { @content }; //1800
+    }
+}
+
+@mixin abs-midle-align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+@mixin repond-photo {
+    min-height: 13rem;
+    @include respond(sm-phone) {
+      min-height: 15.5rem;
+    }
+    @include respond(md-phone) {
+      min-height: 18.5rem;
+    }
+    @include respond(phone) {
+      min-height: 22rem;
+    }
+    @include respond(big-phone) {
+      min-height: 27rem;
+    }
+    @include respond(tab) {
+      min-height: 35rem;
+    }
+    @include respond(tab-land) {
+      min-height: 41.5rem;
+    }
+    @include respond(lap) {
+      min-height: 21.5rem;
+    }
+    @include respond(md-lap) {
+      min-height: 25.5rem;
+    }
+    @include respond(desktop) {
+      min-height: 31.5rem;
+    }
+    @include respond(big-desktop) {
+      min-height: 40rem;
+    }
+  }
+
+

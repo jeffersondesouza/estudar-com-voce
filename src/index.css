@@ -1,0 +1,111 @@
+@font-face {
+  font-family: 'Proxima Nova Black';
+  src: url('./assets/fonts/ProximaNova-Black.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ProximaNova Bold';
+  src: url('./assets/fonts/ProximaNova-Bold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ProximaNova BoldIt';
+  src: url('./assets/fonts/ProximaNova-BoldIt.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ProximaNova Extrabold';
+  src: url('./assets/fonts/ProximaNova-Extrabold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ProximaNova Light';
+  src: url('./assets/fonts/ProximaNova-Light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ProximaNova LightItalic';
+  src: url('./assets/fonts/ProximaNova-LightItalic.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ProximaNova RegItalic';
+  src: url('./assets/fonts/ProximaNova-RegItalic.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ProximaNova Regular';
+  src: url('./assets/fonts/ProximaNova-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ProximaNova Semibold';
+  src: url('./assets/fonts/ProximaNova-Semibold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ProximaNova SemiboldItalic';
+  src: url('./assets/fonts/ProximaNova-SemiboldItalic.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ProximaNovaCond Light';
+  src: url('./assets/fonts/ProximaNovaCond-Light.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ProximaNovaCond LightIt';
+  src: url('./assets/fonts/ProximaNovaCond-LightIt.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ProximaNovaCond Regular';
+  src: url('./assets/fonts/ProximaNovaCond-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ProximaNovaCond RegularIt';
+  src: url('./assets/fonts/ProximaNovaCond-RegularIt.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ProximaNovaCond Semibold';
+  src: url('./assets/fonts/ProximaNovaCond-Semibold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ProximaNovaCond SemiboldIt';
+  src: url('./assets/fonts/ProximaNovaCond-SemiboldIt.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}

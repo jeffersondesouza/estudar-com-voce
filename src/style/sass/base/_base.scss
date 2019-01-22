@@ -1,0 +1,28 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  // This defines what 1rem is
+  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+  min-height: 100%;
+}
+
+body {
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  background-image: linear-gradient( 200deg, $purple-heart 96rem, $torch-red 96rem);
+
+  @include respond(lap) {
+    background-image: linear-gradient( 200deg, $purple-heart 100rem, $torch-red 100rem);
+  }
+}
+
+
+ul {
+  list-style: none;
+}
