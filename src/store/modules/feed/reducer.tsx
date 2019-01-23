@@ -1,21 +1,22 @@
 
-import INITIAL_STATE from './state'
+import { IState, InitialState } from './state'
 
-import * as ActionTypes from './constants';
+import { ActionsEnum } from './constants';
+import ActionType from '../../../models/ActionType';
 
 
-function feedReducer(state = INITIAL_STATE, action) {
+function feedReducer(state = InitialState, action: ActionType) {
+
 	switch (action.type) {
 
-
-		case ActionTypes.LOAD_FEED_REQUEST:
+		case ActionsEnum.LOAD_FEED_REQUEST:
 			return {
 				...state,
 				team: [],
 				isLoadingFeed: true,
 			}
 
-		case ActionTypes.LOAD_FEED_SUCCESS:
+		case ActionsEnum.LOAD_FEED_SUCCESS:
 
 			return {
 				...state,
@@ -24,7 +25,7 @@ function feedReducer(state = INITIAL_STATE, action) {
 				error: null
 			}
 
-		case ActionTypes.LOAD_FEED_FAILURE:
+		case ActionsEnum.LOAD_FEED_FAILURE:
 			return {
 				...state,
 				isLoadingFeed: false,

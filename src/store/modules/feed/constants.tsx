@@ -1,3 +1,7 @@
-export const LOAD_FEED_REQUEST = 'feed:LOAD_FEED_REQUEST';
-export const LOAD_FEED_SUCCESS = 'feed:LOAD_FEED_SUCCESS';
-export const LOAD_FEED_FAILURE = 'feed:LOAD_FEED_FAILURE';
+export enum ActionsEnum {
+  LOAD_FEED_REQUEST = 'feed:LOAD_FEED_REQUEST',
+  LOAD_FEED_SUCCESS = 'feed:LOAD_FEED_SUCCESS',
+  LOAD_FEED_FAILURE = 'feed:LOAD_FEED_FAILURE',
+}
+
+

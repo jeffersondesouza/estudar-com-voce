@@ -1,23 +1,24 @@
-import * as Action from './constants';
+import { ActionsEnum } from './constants';
+import ActionType from '../../../models/ActionType';
 
 export default class FeedActions {
 
-    static loadFeedRequest() {
+    static loadFeedRequest(): ActionType {
         return {
-            type: Action.LOAD_FEED_REQUEST
+            type: ActionsEnum.LOAD_FEED_REQUEST
         }
     }
 
-    static loadFeedSuccess(team) {
+    static loadFeedSuccess(team): ActionType {
         return {
-            type: Action.LOAD_FEED_SUCCESS,
+            type: ActionsEnum.LOAD_FEED_SUCCESS,
             payload: { team }
         }
     }
 
-    static loadFeedFailure(error) {
+    static loadFeedFailure(error): ActionType {
         return {
-            type: Action.LOAD_FEED_FAILURE,
+            type: ActionsEnum.LOAD_FEED_FAILURE,
             payload: { error }
         }
     }
