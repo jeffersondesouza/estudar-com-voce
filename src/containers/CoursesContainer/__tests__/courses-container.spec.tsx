@@ -1,29 +1,37 @@
 import * as React from 'react';
-import { shallow, mount } from 'enzyme';
+import axios from 'axios';
 
 import { Provider } from 'react-redux';
 import { StaticRouter } from 'react-router';
 
-import renderer from 'react-test-renderer';
+import * as renderer from 'react-test-renderer';
 
 import store from '../../../store';
-import HttpService from '../../../utils/HttpService';
-import { CoursesContainer } from '..';
+import CoursesContainer from './../';
+import ResMock from '../../../../__mocks__/courses.mock';
 
-
+jest.mock('axios');
 
 describe('<CoursesContainer>', () => {
 
-  it('test', ()=>{
-    expect(1).toBe(1);
+  it('test', () => {
+
+    const resp = { data: ResMock };
+    (axios.get as any).mockResolvedValue(resp);
+
+
     const component = (
       <Provider store={store}>
         <StaticRouter context={{}}>
-          <CoursesContainer dispatchLoadFeed={()=>{}}/>
+          <CoursesContainer dispatchLoadFeed={() => { }} />
         </StaticRouter>
       </Provider>
     );
 
+    const tree = renderer.create(component).toJSON();
+    expect(tree).toMatchSnapshot();
+
+    expect(axios.get).toHaveBeenCalled();
 
   })
 

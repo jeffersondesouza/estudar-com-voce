@@ -18,6 +18,8 @@ export class CoursesContainer extends React.Component<IProps> {
   }
 
   render() {
+    console.log(this.props['team']);
+    
     return (
       <div className="courses-block">
         <Search />

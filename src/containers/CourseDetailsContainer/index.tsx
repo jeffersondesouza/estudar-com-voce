@@ -46,8 +46,6 @@ const mapDispatchToProps = dispatch => ({
 
 export default connect(mapStateToProps, mapDispatchToProps)(CourseDetailsContainer);
 
-
-
 const MOCK = {
   "id": 1,
   "name": "Física II",
