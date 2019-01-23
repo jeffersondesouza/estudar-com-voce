@@ -6,17 +6,21 @@ import { CourseComponent } from '../Course';
 
 
 export interface IProps {
-  courses: Course[]
+  courses: Course[];
+  title: string
 }
 
 export const CoursesList = (props: IProps) => (
-  <ul className="courses-list">
-    {
-      props.courses.map(course => (
-        <li key={course.id}>
-          <CourseComponent course={course} />
-        </li>
-      ))
-    }
-  </ul>
+  <div className="courses">
+    <h2 className="title courses__title">{props.title}</h2>
+    <ul className="courses__list">
+      {
+        props.courses.map(course => (
+          <li key={course.id} className="courses__list-item">
+            <CourseComponent course={course} />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 );

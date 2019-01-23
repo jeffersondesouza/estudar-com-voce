@@ -2,8 +2,23 @@
 @import '../../../style/sass/abstracts/mixins';
 /*  */
 
-.courses-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.courses {
+  padding: 0 1rem;
+  &__title {
+    color: $emperor;
+    margin-bottom: 2rem;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include respond(phone) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+  &__list-item {
+    margin-right: 2rem;
+  }
 }

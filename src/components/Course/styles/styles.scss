@@ -9,11 +9,11 @@
   font-size: $font-size-sm;
   height: 16rem;
   margin-bottom: 2rem;
-  width: 28.8rem;
+  width: 23rem;
   cursor: pointer;
   &__header {
     border-radius: 0.25rem 0.25rem 0 0;
-    background-color: $downy;
+    background-color: $paradiso;
     color: $white;
     flex: 5;
     font-weight: 900;
@@ -30,6 +30,9 @@
     font-weight: 900;
     padding: 1.25rem;
     text-align: right;
+  }
+  &__highlight {
+    color: $japonica;
   }
   &:hover &__header {
     background-color: $downy-dark;

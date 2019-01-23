@@ -16,7 +16,7 @@ export const CourseComponent = (props: IProps) => {
         <h3>{course.name}</h3>
       </div>
       <div className="course__footer">
-        <div>Novo</div>
+        <div className="course__highlight">{course.highlight && 'Novo!'}</div>
       </div>
     </div>
   );
