@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import './style/style.scss';
 
-import FeedMidleware from '../../store/modules/feed/middleware';
+import CourseMidleware from '../../store/modules/course/middleware';
 
 
 export interface IProps {
@@ -35,11 +35,11 @@ export class CourseDetailsContainer extends React.Component<IProps> {
 }
 
 const mapStateToProps = state => ({
-  ...state.feed,
+  ...state.course,
 });
 
 const mapDispatchToProps = dispatch => ({
-  dispatchLoadCourse: () => dispatch(FeedMidleware.loadFeedRequest()),
+  dispatchLoadCourse: () => dispatch(CourseMidleware.loadFeedRequest()),
 });
 
 

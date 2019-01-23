@@ -9,7 +9,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const plugins = [];
 // const API_BASE_URL = JSON.stringify('http://localhost:8080');
 
-const API_BASE_URL = JSON.stringify('https://gist.githubusercontent.com/sales/f961f967c6668c7c1c3ed565e3bf94e8/raw/71168b72d9a3a199bd1de01026b5031875f6d432/team.json');
+const API_BASE_URL = JSON.stringify('https://raw.githubusercontent.com/estudarcomvoce/frontend-challenge/master/assets/courses.json');
 
 plugins.push(new cleanWebpackPlugin(['dist']));
 

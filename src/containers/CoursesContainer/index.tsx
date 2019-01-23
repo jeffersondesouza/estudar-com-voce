@@ -2,7 +2,8 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 
 import './style/style.scss';
-import FeedMidleware from '../../store/modules/feed/middleware';
+import FeedMidleware from '../../store/modules/course/middleware';
+
 import { Search } from '../../components/Search';
 import { CoursesList } from '../../components/Courses-list';
 import { Course } from '../../models/Course';
@@ -10,7 +11,7 @@ import { Course } from '../../models/Course';
 
 export interface IProps {
   dispatchLoadFeed(): void,
-  team?: Course[]
+  courses?: Course[]
 }
 
 export class CoursesContainer extends React.Component<IProps> {
@@ -20,9 +21,9 @@ export class CoursesContainer extends React.Component<IProps> {
   }
 
   render() {
-    console.log(this.props['team']);
-    const { team } = this.props;
-    
+    // console.log(this.props['courses']);
+    const { courses } = this.props;
+
     return (
       <div className="courses-block">
         <Search />
@@ -34,7 +35,7 @@ export class CoursesContainer extends React.Component<IProps> {
 }
 
 const mapStateToProps = state => ({
-  ...state.feed,
+  ...state.course,
 });
 
 const mapDispatchToProps = dispatch => ({

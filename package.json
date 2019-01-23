@@ -91,9 +91,7 @@
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
     ],
-    "globals": {
-      "API_BASE_URL": "baseurl"
-    },
+    
     "transform": {
       "^.+\\.tsx?$": "ts-jest"
     },

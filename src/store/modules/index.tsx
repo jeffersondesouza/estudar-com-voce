@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
-import feedReducer from './feed/reducer';
+import  courseReducer from './course/reducer';
 
 const rootReducer = combineReducers({
-  feed: feedReducer,
+  course:  courseReducer,
 });
 
 export default rootReducer;

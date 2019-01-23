@@ -5,30 +5,30 @@ import { ActionsEnum } from './constants';
 import ActionType from '../../../models/ActionType';
 
 
-function feedReducer(state = InitialState, action: ActionType) {
+function feedReducer(state = InitialState, action: ActionType): IState {
 
 	switch (action.type) {
 
-		case ActionsEnum.LOAD_FEED_REQUEST:
+		case ActionsEnum.LOAD_COURSES_REQUEST:
 			return {
 				...state,
-				team: [],
-				isLoadingFeed: true,
+				courses: [],
+				isLoadingCourses: true,
 			}
 
-		case ActionsEnum.LOAD_FEED_SUCCESS:
+		case ActionsEnum.LOAD_COURSES_SUCCESS:
 
 			return {
 				...state,
-				team: [...action.payload.team],
-				isLoadingFeed: false,
+				courses: [...action.payload.courses],
+				isLoadingCourses: false,
 				error: null
 			}
 
-		case ActionsEnum.LOAD_FEED_FAILURE:
+		case ActionsEnum.LOAD_COURSES_FAILURE:
 			return {
 				...state,
-				isLoadingFeed: false,
+				isLoadingCourses: false,
 				error: { ...action.payload.error }
 			}
 
