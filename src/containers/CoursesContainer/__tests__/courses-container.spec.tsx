@@ -6,24 +6,20 @@ import { StaticRouter } from 'react-router';
 
 import renderer from 'react-test-renderer';
 
-import USERS_MOCK from '../../../../__mocks__/users.mock';
-
 import store from '../../../store';
 import HttpService from '../../../utils/HttpService';
-import { FeedContainer } from '..';
+import { CoursesContainer } from '..';
 
 
 
-
-
-describe('<FeedContainer>', () => {
+describe('<CoursesContainer>', () => {
 
   it('test', ()=>{
     expect(1).toBe(1);
     const component = (
       <Provider store={store}>
         <StaticRouter context={{}}>
-          <FeedContainer dispatchLoadFeed={()=>{}}/>
+          <CoursesContainer dispatchLoadFeed={()=>{}}/>
         </StaticRouter>
       </Provider>
     );
@@ -39,9 +35,9 @@ describe('<FeedContainer>', () => {
 HttpService.get = jest.fn();
 
 
-describe('<FeedContainer>', () => {
+describe('<CoursesContainer>', () => {
 
-  describe('when FeedContainer mount', () => {
+  describe('when CoursesContainer mount', () => {
 
     context('when server respond feed request with SUCCESS', () => {
       it('should match the component spnapshot', () => {
@@ -51,7 +47,7 @@ describe('<FeedContainer>', () => {
         const component = (
           <Provider store={store}>
             <StaticRouter context={{}}>
-              <FeedContainer />
+              <CoursesContainer />
             </StaticRouter>
           </Provider>
         );
@@ -73,7 +69,7 @@ describe('<FeedContainer>', () => {
         const component = (
           <Provider store={store}>
             <StaticRouter context={{}}>
-              <FeedContainer />
+              <CoursesContainer />
             </StaticRouter>
           </Provider>
         );

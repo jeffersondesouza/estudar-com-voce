@@ -1,0 +1,63 @@
+@import '../../../style/sass/abstracts/variables';
+@import '../../../style/sass/abstracts/mixins';
+/*  */
+
+.search {
+  padding: 0 .5rem;
+  @include respond(phone) {
+    padding: 0 .5rem;
+  }
+  &__input {
+    margin: 0 auto;
+    @include respond(phone) {
+      width: 40rem;
+    }
+    @include respond(tab) {
+      width: 60rem;
+    }
+  }
+  &__filters {
+    @include abs-midle-align;
+  }
+  &__radio-label {
+    @include abs-midle-align;
+    font-size: $font-size-default;
+    &:not(:last-child) {
+      margin-right: 5rem;
+    }
+    input {
+      display: none;
+    }
+    label {
+      position: relative;
+      padding-left: 1.75rem;
+      margin-bottom: 0;
+      &::before {
+        content: "";
+        left: 0;
+        top: 50%;
+        transform: translate(0%, -50%);
+        position: absolute;
+        width: 1.5rem;
+        height: 1.5rem;
+        background: $white;
+        border-radius: 100%;
+        border: 2px solid $downy;
+      }
+      &::after {
+        content: "";
+        left: 0;
+        top: 50%;
+        transform: translate(50%, -50%);
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: transparent;
+        border-radius: 100%;
+      }
+    }
+    input:checked+label::after {
+      background: $downy;
+    }
+  }
+}

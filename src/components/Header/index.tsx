@@ -12,7 +12,7 @@ export const Header = (props: IProps) => (
     <figure className="header__brand">
       <img className="header__logo-img" src=" src /assets/img/logo.png" alt="Logotipo Estudar Com Você " srcSet="src/assets/img/logo.png" />
     </figure>
-    <div className="search">
+{/*     <div className="search">
       <div className="search__input">
         <input className="form-control" />
         <button className="btn">O</button>
@@ -32,5 +32,5 @@ export const Header = (props: IProps) => (
         </div>
       </div>
     </div>
-  </header>
+ */}  </header>
 );
