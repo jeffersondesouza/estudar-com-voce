@@ -39,7 +39,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  dispatchLoadCourse: () => dispatch(CourseMidleware.loadFeedRequest()),
+  dispatchLoadCourse: () => dispatch(CourseMidleware.loadCoursesRequest()),
 });
 
 

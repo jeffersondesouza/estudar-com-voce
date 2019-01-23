@@ -18,8 +18,9 @@ describe('<CoursesContainer>', () => {
 
     it('should call and list courses', () => {
 
+
       const resp = { data: ResMock };
-      const component = <CoursesContainer dispatchLoadFeed={() => { }} />;
+      const component = <CoursesContainer dispatchloadCourses={() => { }} />;
 
       (axios.get as any).mockResolvedValue(resp);
 
@@ -28,10 +29,11 @@ describe('<CoursesContainer>', () => {
           <StaticRouter context={{}}>{component}</StaticRouter>
         </Provider>
       );
+
       const tree = renderer.create(container).toJSON();
+
       expect(tree).toMatchSnapshot();
       expect(axios.get).toHaveBeenCalled();
-
 
     });
 

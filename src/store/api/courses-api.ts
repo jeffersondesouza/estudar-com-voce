@@ -9,6 +9,13 @@ const loadCourses = () => axios.get(baseUrl)
     return err;
   });
 
+const loadCourse = (id: number) => axios.get(baseUrl)
+  .then(res => res.data)
+  .catch(err => {
+    return err;
+  });
+
 export default {
   loadCourses,
+  loadCourse
 }
