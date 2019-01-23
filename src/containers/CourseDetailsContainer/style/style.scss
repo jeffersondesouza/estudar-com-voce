@@ -1,0 +1,25 @@
+@import '../../../style/sass/abstracts/mixins';
+@import '../../../style/sass/abstracts/variables';
+.details {
+  width: 90%;
+  margin: 2rem auto 0;
+  @include respond(phone) {
+    width: 95%;
+  }
+  @include respond(lap) {}
+  &__title {
+    color: $paradiso;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+  }
+  &__highlight {
+    color: $emperor;
+    font-size: $font-size-sm;
+    margin-left: .5rem;
+  }
+  &__description {
+    font-size: $font-size-default;
+    text-align: justify;
+    line-height: 2;
+  }
+}

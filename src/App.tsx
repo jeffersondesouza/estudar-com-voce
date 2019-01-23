@@ -3,6 +3,8 @@ import * as React from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
 import CoursesContainer from './containers/CoursesContainer';
+import CourseDetailsContainer from './containers/CourseDetailsContainer';
+
 import { Header } from './components/Header';
 
 /* 
@@ -16,9 +18,9 @@ export default class App extends React.Component {
       <React.Fragment>
         <Header showSearch={true} />
         <Switch>
-          <Route exact path="/feed" component={CoursesContainer} />
-          {/* <Route exact path="/timeline/:username" component={TimelineContainer} /> */}
-          <Route path="**" render={() => (<Redirect to="/feed" />)} />
+          <Route exact path="/courses" component={CoursesContainer} />
+          <Route exact path="/courses/:id" component={CourseDetailsContainer} />
+          <Route path="**" render={() => (<Redirect to="/courses" />)} />
         </Switch>
       </React.Fragment>
     );

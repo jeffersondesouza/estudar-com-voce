@@ -11,7 +11,6 @@ export interface IProps {
   dispatchLoadFeed(): void
 }
 
-
 export class CoursesContainer extends React.Component<IProps> {
 
   componentDidMount() {
@@ -19,9 +18,6 @@ export class CoursesContainer extends React.Component<IProps> {
   }
 
   render() {
-    // const { team, isLoadingFeed } = this.props;
-    console.log(this.props);
-
     return (
       <div className="courses-block">
         <Search />
