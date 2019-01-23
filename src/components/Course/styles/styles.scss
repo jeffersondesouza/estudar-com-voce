@@ -21,6 +21,9 @@
     padding: 0.75rem 1.25rem;
     transition: all .3s;
     @include abs-midle-align;
+    &--generic {
+      background-color: $emerald;
+    }
   }
   &__footer {
     background: $cadet-blue;

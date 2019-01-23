@@ -10,9 +10,10 @@ export interface IProps {
 
 export const CourseComponent = (props: IProps) => {
   const { course } = props;
+  const classNameHeader = course.generic ? 'course__header' : 'course__header course__header--generic';
   return (
     <div className="course">
-      <div className="course__header">
+      <div className={classNameHeader}>
         <h3>{course.name}</h3>
       </div>
       <div className="course__footer">

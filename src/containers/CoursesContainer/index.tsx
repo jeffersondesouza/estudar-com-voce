@@ -26,7 +26,7 @@ export class CoursesContainer extends React.Component<IProps> {
       <div className="courses-block">
         <Search />
         <CoursesList courses={MOCK} title="Materias Personalizadas sem faculdade" />
-        <CoursesList courses={MOCK} title="Materias Gerais" />
+        <CoursesList courses={MOCK2} title="Materias Gerais" />
       </div>
     )
   }
@@ -52,14 +52,6 @@ export default connect(mapStateToProps, mapDispatchToProps)(CoursesContainer);
 
 
 
-
-
-
-
-
-
-
-
 const MOCK = [
   {
     "id": 1,
@@ -68,20 +60,7 @@ const MOCK = [
     "generic": false,
     "highlight": true
   },
-  {
-    "id": 2,
-    "name": "Cálculo I",
-    "description": "Bem-vindos a este curso de Cálculo 1, formulado especialmente para você, aluno da Poli USP! Aqui, você aprenderá tudo o que precisa e ainda encontrará dicas extraordinárias pra arrasar nas provas!  Embarque nessa viagem e bons estudos :)",
-    "generic": false,
-    "highlight": true
-  },
-  {
-    "id": 3,
-    "name": "Probabilidade",
-    "description": "Probabilidade, a matéria que pode dar um sustinho às vezes. Mas relaxa!!! Pula no Estudarboat aqui pra entender as maravilhas dessa matéria e se preparar da melhor forma possível pra destruir nas provinhas.",
-    "generic": true,
-    "highlight": false
-  },
+  
   {
     "id": 4,
     "name": "Cálculo IV",
@@ -89,13 +68,7 @@ const MOCK = [
     "generic": false,
     "highlight": false
   },
-  {
-    "id": 5,
-    "name": "Mecânica I",
-    "description": "Curso completo Mecânica com todos os conceitos. Aqui você encontra tudo o que precisa pra mandar bem, como vídeo aulas, listas de exercício, exercícios resolvidos e provas resolvidas!",
-    "generic": true,
-    "highlight": true
-  },
+  
   {
     "id": 6,
     "name": "Física IV",
@@ -124,13 +97,7 @@ const MOCK = [
     "generic": false,
     "highlight": false
   },
-  {
-    "id": 10,
-    "name": "Programação em Python",
-    "description": "Curso completo de programação em Python",
-    "generic": true,
-    "highlight": false
-  },
+  
   {
     "id": 11,
     "name": "Estatística",
@@ -159,13 +126,7 @@ const MOCK = [
     "generic": false,
     "highlight": true
   },
-  {
-    "id": 15,
-    "name": "Cálculo Numérico",
-    "description": "Vídeos criados com base na matéria de Cálculo Numérico da Escola Politécnica da USP",
-    "generic": true,
-    "highlight": false
-  },
+  
   {
     "id": 16,
     "name": "Álgebra Linear I",
@@ -173,4 +134,40 @@ const MOCK = [
     "generic": false,
     "highlight": true
   }
+];
+
+
+
+
+
+const MOCK2 = [
+
+  {
+    "id": 3,
+    "name": "Probabilidade",
+    "description": "Probabilidade, a matéria que pode dar um sustinho às vezes. Mas relaxa!!! Pula no Estudarboat aqui pra entender as maravilhas dessa matéria e se preparar da melhor forma possível pra destruir nas provinhas.",
+    "generic": true,
+    "highlight": false
+  },
+{
+    "id": 5,
+    "name": "Mecânica I",
+    "description": "Curso completo Mecânica com todos os conceitos. Aqui você encontra tudo o que precisa pra mandar bem, como vídeo aulas, listas de exercício, exercícios resolvidos e provas resolvidas!",
+    "generic": true,
+    "highlight": true
+  },
+{
+    "id": 10,
+    "name": "Programação em Python",
+    "description": "Curso completo de programação em Python",
+    "generic": true,
+    "highlight": false
+  },
+{
+    "id": 15,
+    "name": "Cálculo Numérico",
+    "description": "Vídeos criados com base na matéria de Cálculo Numérico da Escola Politécnica da USP",
+    "generic": true,
+    "highlight": false
+  },
 ];
