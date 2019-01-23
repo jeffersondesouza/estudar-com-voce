@@ -1,15 +1,27 @@
 @import '../../../style/sass/abstracts/mixins';
 @import '../../../style/sass/abstracts/variables';
+/*  */
+
 .details {
   width: 90%;
-  margin: 2rem auto 0;
+  margin: 0 auto;
   @include respond(phone) {
     width: 95%;
   }
   @include respond(lap) {}
+  &__back {
+    font-size: $font-size-sm-lg;
+    padding: 0;
+    margin: 0 0 0 -1rem;
+    &:link,
+    &:visited {
+      color: $downy;
+    }
+  }
   &__title {
     color: $paradiso;
     font-weight: 900;
+    margin-top: .5rem;
     margin-bottom: 1.5rem;
   }
   &__highlight {

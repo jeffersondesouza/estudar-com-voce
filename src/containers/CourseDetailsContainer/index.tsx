@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import './style/style.scss';
 
@@ -20,6 +21,9 @@ export class CourseDetailsContainer extends React.Component<IProps> {
     const course = MOCK;
     return (
       <div className="details">
+        <div>
+          <Link to="/cocurses" className="details__back">&larr;</Link>
+        </div>
         <h2 className="title details__title">
           {course.name}
           {course.highlight && <span className="details__highlight">(novo)</span>}
