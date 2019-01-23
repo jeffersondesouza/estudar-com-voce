@@ -14,26 +14,30 @@ jest.mock('axios');
 
 describe('<CoursesContainer>', () => {
 
-  it('test', () => {
+  describe('when component mount', () => {
 
-    const resp = { data: ResMock };
-    (axios.get as any).mockResolvedValue(resp);
+    it('should call and list courses', () => {
+
+      const resp = { data: ResMock };
+      const component = <CoursesContainer dispatchLoadFeed={() => { }} />;
+
+      (axios.get as any).mockResolvedValue(resp);
+
+      const container = (
+        <Provider store={store}>
+          <StaticRouter context={{}}>{component}</StaticRouter>
+        </Provider>
+      );
+      const tree = renderer.create(container).toJSON();
+      expect(tree).toMatchSnapshot();
+      expect(axios.get).toHaveBeenCalled();
 
 
-    const component = (
-      <Provider store={store}>
-        <StaticRouter context={{}}>
-          <CoursesContainer dispatchLoadFeed={() => { }} />
-        </StaticRouter>
-      </Provider>
-    );
+      
+    });
 
-    const tree = renderer.create(component).toJSON();
-    expect(tree).toMatchSnapshot();
+  });
 
-    expect(axios.get).toHaveBeenCalled();
-
-  })
 
 });
 

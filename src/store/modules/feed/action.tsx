@@ -9,8 +9,6 @@ export default class FeedActions {
     }
 
     static loadFeedSuccess(team) {
-            console.log(team);
-            
         return {
             type: Action.LOAD_FEED_SUCCESS,
             payload: { team }

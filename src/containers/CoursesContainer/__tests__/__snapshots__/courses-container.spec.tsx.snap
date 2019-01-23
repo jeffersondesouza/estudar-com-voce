@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<CoursesContainer> test 1`] = `
+exports[`<CoursesContainer> when component mount should call and list courses 1`] = `
 <div
   className="courses-block"
 >

@@ -5,10 +5,12 @@ import './style/style.scss';
 import FeedMidleware from '../../store/modules/feed/middleware';
 import { Search } from '../../components/Search';
 import { CoursesList } from '../../components/Courses-list';
+import { Course } from '../../models/Course';
 
 
 export interface IProps {
-  dispatchLoadFeed(): void
+  dispatchLoadFeed(): void,
+  team?: Course[]
 }
 
 export class CoursesContainer extends React.Component<IProps> {
@@ -19,6 +21,7 @@ export class CoursesContainer extends React.Component<IProps> {
 
   render() {
     console.log(this.props['team']);
+    const { team } = this.props;
     
     return (
       <div className="courses-block">
@@ -58,7 +61,7 @@ const MOCK = [
     "generic": false,
     "highlight": true
   },
-  
+
   {
     "id": 4,
     "name": "Cálculo IV",
@@ -66,7 +69,7 @@ const MOCK = [
     "generic": false,
     "highlight": false
   },
-  
+
   {
     "id": 6,
     "name": "Física IV",
@@ -95,7 +98,7 @@ const MOCK = [
     "generic": false,
     "highlight": false
   },
-  
+
   {
     "id": 11,
     "name": "Estatística",
@@ -124,7 +127,7 @@ const MOCK = [
     "generic": false,
     "highlight": true
   },
-  
+
   {
     "id": 16,
     "name": "Álgebra Linear I",
@@ -147,21 +150,21 @@ const MOCK2 = [
     "generic": true,
     "highlight": false
   },
-{
+  {
     "id": 5,
     "name": "Mecânica I",
     "description": "Curso completo Mecânica com todos os conceitos. Aqui você encontra tudo o que precisa pra mandar bem, como vídeo aulas, listas de exercício, exercícios resolvidos e provas resolvidas!",
     "generic": true,
     "highlight": true
   },
-{
+  {
     "id": 10,
     "name": "Programação em Python",
     "description": "Curso completo de programação em Python",
     "generic": true,
     "highlight": false
   },
-{
+  {
     "id": 15,
     "name": "Cálculo Numérico",
     "description": "Vídeos criados com base na matéria de Cálculo Numérico da Escola Politécnica da USP",
