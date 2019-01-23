@@ -4,18 +4,24 @@
 
 .courses {
   padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
   &__title {
     color: $emperor;
     margin-bottom: 2rem;
+    @include respond(lap) {
+      margin-bottom: 3rem;
+    }
   }
   &__list {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
-    @include respond(phone) {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: center;
+    justify-content: center;
+    margin: auto;
+    width: 95%;
+    @include respond(big-phone) {
+      justify-content: flex-start;
     }
   }
   &__list-item {

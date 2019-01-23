@@ -23,11 +23,11 @@ export class CoursesContainer extends React.Component<IProps> {
     console.log(this.props);
 
     return (
-      <React.Fragment>
+      <div className="courses-block">
         <Search />
         <CoursesList courses={MOCK} title="Materias Personalizadas sem faculdade" />
         <CoursesList courses={MOCK} title="Materias Gerais" />
-      </React.Fragment>
+      </div>
     )
   }
 }
