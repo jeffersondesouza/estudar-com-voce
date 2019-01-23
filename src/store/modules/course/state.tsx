@@ -9,6 +9,7 @@ export interface IState {
     selectedCourse: Course | null,
     isLoadingCourses: boolean,
     isLoadingCourse: boolean,
+    courseFilter: { type: string, course: string }
 }
 
 
@@ -21,4 +22,5 @@ export const InitialState: IState = {
     isLoadingCourses: false,
     isLoadingCourse: false,
     selectedCourseId: null,
+    courseFilter: { type: 'generic', course: '' }
 }

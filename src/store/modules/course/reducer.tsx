@@ -70,6 +70,24 @@ function feedReducer(state = InitialState, action: ActionType): IState {
 			}
 
 
+
+		case ActionsEnum.FILTER_COURSES:
+			const courseFilter = {
+				...state.courseFilter,
+				[action.payload.name]: action.payload.value
+			};
+
+			console.log(courseFilter, state.courses);
+
+
+
+			return {
+				...state,
+				customCourses: selectos.filterCustomCourses(state.courses),
+				genericCourses: selectos.filterGenericCourses(state.courses),
+				courseFilter,
+			}
+
 		default:
 			return state;
 	}

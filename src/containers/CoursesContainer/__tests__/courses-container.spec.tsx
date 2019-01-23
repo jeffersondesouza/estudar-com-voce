@@ -8,100 +8,54 @@ import * as renderer from 'react-test-renderer';
 
 import store from '../../../store';
 import CoursesContainer from './../';
+import { CoursesContainer as CoursesContainerComponent } from './../';
+
+import { shallow, mount } from 'enzyme';
+import { Search } from '../../../components/Search';
 
 
 jest.mock('axios');
 
+
 describe('<CoursesContainer>', () => {
 
   describe('when component mount', () => {
+    let component;
+    let container;
+    let tree;
 
     it('should call and list courses', () => {
 
-
       const resp = { data: ResMock };
-      const component = <CoursesContainer dispatchloadCourses={() => { }} />;
+      component = <CoursesContainer
+        dispatchFilterCourses={({ }) => { }}
+        dispatchloadCourses={() => { }}
+        isLoadingCourses={false}
+        customCourses={[]}
+        genericCourses={[]}
+      />;
 
       (axios.get as any).mockResolvedValue(resp);
 
-      const container = (
+      container = (
         <Provider store={store}>
           <StaticRouter context={{}}>{component}</StaticRouter>
         </Provider>
       );
 
-      const tree = renderer.create(container).toJSON();
+      tree = renderer.create(container).toJSON();
 
       expect(tree).toMatchSnapshot();
       expect(axios.get).toHaveBeenCalled();
 
     });
 
+
   });
 
 
 });
 
-
-/*
-
-HttpService.get = jest.fn();
-
-
-describe('<CoursesContainer>', () => {
-
-  describe('when CoursesContainer mount', () => {
-
-    context('when server respond feed request with SUCCESS', () => {
-      it('should match the component spnapshot', () => {
-
-        HttpService.get.mockResolvedValue(USERS_MOCK);
-
-        const component = (
-          <Provider store={store}>
-            <StaticRouter context={{}}>
-              <CoursesContainer />
-            </StaticRouter>
-          </Provider>
-        );
-
-        const tree = renderer.create(component).toJSON()
-        const wrapper = mount(component);
-
-        expect(tree).toMatchSnapshot();
-        expect(HttpService.get).toHaveBeenCalled();
-
-      });
-    });
-
-    context('when server respond feed request with ERROR', () => {
-      it('should match the component spnapshot', () => {
-
-        HttpService.get.mockRejectedValue(new Error('could not load the components'));
-
-        const component = (
-          <Provider store={store}>
-            <StaticRouter context={{}}>
-              <CoursesContainer />
-            </StaticRouter>
-          </Provider>
-        );
-
-        const tree = renderer.create(component).toJSON()
-        const wrapper = mount(component);
-
-        expect(tree).toMatchSnapshot();
-        expect(HttpService.get).toHaveBeenCalled();
-
-      });
-    });
-
-  });
-
-});
-
-
- */
 
 const ResMock = [
   {

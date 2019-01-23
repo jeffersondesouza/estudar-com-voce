@@ -44,4 +44,11 @@ export default class FeedActions {
         }
     }
 
+    static filterCourses(filter): ActionType {
+        return {
+            type: ActionsEnum.FILTER_COURSES,
+            payload: { ...filter }
+        }
+    }
+
 }

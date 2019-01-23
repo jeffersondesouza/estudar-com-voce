@@ -12,6 +12,8 @@ exports[`<CoursesContainer> when component mount should call and list courses 1`
     >
       <input
         className="form-control"
+        name="course"
+        onChange={[Function]}
         placeholder="Informe o nome do curso que deseja encontrar"
       />
     </div>
@@ -23,8 +25,10 @@ exports[`<CoursesContainer> when component mount should call and list courses 1`
       >
         <input
           id="ipt1"
-          name="filter"
+          name="type"
+          onClick={[Function]}
           type="radio"
+          value="all"
         />
         <label
           htmlFor="ipt1"
@@ -37,8 +41,10 @@ exports[`<CoursesContainer> when component mount should call and list courses 1`
       >
         <input
           id="ipt2"
-          name="filter"
+          name="type"
+          onClick={[Function]}
           type="radio"
+          value="generic"
         />
         <label
           htmlFor="ipt2"
@@ -51,8 +57,10 @@ exports[`<CoursesContainer> when component mount should call and list courses 1`
       >
         <input
           id="ipt3"
-          name="filter"
+          name="type"
+          onClick={[Function]}
           type="radio"
+          value="custom"
         />
         <label
           htmlFor="ipt3"
@@ -64,30 +72,6 @@ exports[`<CoursesContainer> when component mount should call and list courses 1`
         className="icon-bank"
       />
     </div>
-  </div>
-  <div
-    className="courses"
-  >
-    <h2
-      className="title courses__title"
-    >
-      Materias Personalizadas sem faculdade
-    </h2>
-    <ul
-      className="courses__list"
-    />
-  </div>
-  <div
-    className="courses"
-  >
-    <h2
-      className="title courses__title"
-    >
-      Materias Gerais
-    </h2>
-    <ul
-      className="courses__list"
-    />
   </div>
 </div>
 `;

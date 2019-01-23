@@ -25,4 +25,10 @@ export default class FeedMidleware {
         };
     }
 
+    static filterCourses(filter) {
+        return dispatch => {
+            dispatch(Actions.filterCourses(filter));
+        };
+    }
+
 }

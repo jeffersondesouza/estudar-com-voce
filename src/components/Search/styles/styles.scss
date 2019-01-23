@@ -13,6 +13,15 @@
     @include respond(tab) {
       width: 60rem;
     }
+    input {
+      font-size: $font-size-default;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+      &:focus {
+        border-color: $downy;
+        box-shadow: 0 0 0 0.2rem rgba($downy, 0.25);
+      }
+    }
   }
   &__filters {
     @include abs-midle-align;

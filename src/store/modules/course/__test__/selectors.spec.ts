@@ -1,4 +1,4 @@
-import { filterCustomCourses, filterGenericCourses } from "../selectors";
+import { filterCustomCourses, filterGenericCourses, filterCourses } from "../selectors";
 import { selectCourse } from "../selectors/select-course";
 
 const CUSTOM = [
@@ -156,6 +156,36 @@ describe('Courses:SELECTORS', () => {
       expect(
         selectCourse(4, ALL_COURSES)
       ).toEqual(ALL_COURSES[1])
+    });
+
+  });
+
+
+  describe('test:filter courses', () => {
+
+    it('sould filter course by name', () => {
+      const filerdCourses = filterCourses({ type: 'all', course: "probabilidade" }, ALL_COURSES);
+      const expectedCourse = [GENERIC_COURSES[0]];
+      expect(filerdCourses).toEqual(expectedCourse);
+    });
+
+    it('sould filter course by name and type generic', () => {
+      const filerdCourses = filterCourses({ type: 'generic', course: "Programação em Python" }, ALL_COURSES);
+      const expectedCourse = [GENERIC_COURSES[2]];
+      expect(filerdCourses).toEqual(expectedCourse);
+    });
+
+    it('sould filter course by name and type custom', () => {
+      const filerdCourses = filterCourses({ type: 'custom', course: "Álgebra Linear I" }, ALL_COURSES);
+      const expectedCourse = [CUSTOM[0]];
+      expect(filerdCourses).toEqual(expectedCourse);
+    });
+
+
+    it('sould filter course by name and type all', () => {
+      const filerdCourses = filterCourses({ type: 'all', course: "Cáculo" }, ALL_COURSES);
+
+      expect(filerdCourses.length).toEqual(4);
     });
 
   });
