@@ -18,20 +18,4 @@
       color: $downy;
     }
   }
-  &__title {
-    color: $paradiso;
-    font-weight: 900;
-    margin-top: .5rem;
-    margin-bottom: 1.5rem;
-  }
-  &__highlight {
-    color: $emperor;
-    font-size: $font-size-sm;
-    margin-left: .5rem;
-  }
-  &__description {
-    font-size: $font-size-default;
-    text-align: justify;
-    line-height: 2;
-  }
 }

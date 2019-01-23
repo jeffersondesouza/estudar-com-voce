@@ -7,6 +7,7 @@ import './style/style.scss';
 import CourseMidleware from '../../store/modules/course/middleware';
 import { selectCourse } from '../../store/modules/course/selectors';
 import { Course } from '../../models';
+import { CourseDetails } from '../../components/CourseDetails';
 
 
 export interface IProps {
@@ -32,13 +33,7 @@ export class CourseDetailsContainer extends React.Component<IProps> {
           <Link to="/cocurses" className="details__back">&larr;</Link>
         </div>
         {(!isLoadingCourse && selectedCourse) &&
-          <div>
-            <h2 className="title details__title">
-              {selectedCourse.name}
-              {selectedCourse.highlight && <span className="details__highlight">(novo)</span>}
-            </h2>
-            <p className="details__description">{selectedCourse.description}</p>
-          </div>
+          <CourseDetails course={selectedCourse} />
         }
       </div>
     )
@@ -53,14 +48,4 @@ const mapDispatchToProps = dispatch => ({
   dispatchLoad: (id: number) => dispatch(CourseMidleware.loadCourse(id)),
 });
 
-
-
 export default connect(mapStateToProps, mapDispatchToProps)(CourseDetailsContainer);
-
-const MOCK = {
-  "id": 1,
-  "name": "Física II",
-  "description": "Curso remasterizado e criado inteiramente baseado na sua graduação da POLI USP. Provas passadas resolvidas, teoria explicadinha e muitos exercícios extra. Aproveite!",
-  "generic": false,
-  "highlight": true
-}
