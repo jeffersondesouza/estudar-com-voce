@@ -12,7 +12,7 @@ import { Course } from '../../models';
 export interface IProps {
   dispatchLoad(id: number): void,
   match: any,
-  selectedCourse: Course | null,
+  selectedCourse: Course,
   isLoadingCourse: boolean,
 }
 

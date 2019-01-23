@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CourseDetailsContainer> when component mount should call and present a course 1`] = `
+<div
+  className="details"
+>
+  <div>
+    <a
+      className="details__back"
+      href="/cocurses"
+      onClick={[Function]}
+    >
+      ←
+    </a>
+  </div>
+</div>
+`;
