@@ -1,0 +1,7 @@
+@import '../../../style/sass/abstracts/mixins';
+
+.courses-block{
+  @include respond(lap) {
+    padding: 0 3rem;
+  }
+}

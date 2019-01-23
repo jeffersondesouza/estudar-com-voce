@@ -1,0 +1,28 @@
+@import '../../../style/sass/abstracts/variables';
+@import '../../../style/sass/abstracts/mixins';
+/*  */
+
+.courses {
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  &__title {
+    color: $emperor;
+    margin-bottom: 2rem;
+    @include respond(lap) {
+      margin-bottom: 3rem;
+    }
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    @include respond(big-phone) {
+      justify-content: flex-start;
+    }
+  }
+  &__list-item {
+    margin-right: 2rem;
+  }
+}
