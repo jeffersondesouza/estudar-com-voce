@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import './style/style.scss';
 import FeedMidleware from '../../store/modules/feed/middleware';
 import { Search } from '../../components/Search';
-import { CourseComponent as Course } from '../../components/Course';
+import { CoursesList } from '../../components/Courses-list';
 
 
 export interface IProps {
@@ -27,20 +27,11 @@ export class CoursesContainer extends React.Component<IProps> {
         <Search />
         <section>
           <h2 className="title">Materias Personalizadas sem faculdade</h2>
-          <ul>
-            {
-              MOCK.map(course => (
-                <li key={course.id}>
-
-                  <Course course={course} />
-
-                </li>
-              ))
-            }
-          </ul>
+          <CoursesList courses={MOCK} />
         </section>
         <section>
           <h2 className="title">Materias Gerais</h2>
+          <CoursesList courses={MOCK} />
         </section>
       </section>
     )

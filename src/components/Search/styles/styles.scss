@@ -23,7 +23,7 @@
     @include abs-midle-align;
     font-size: $font-size-default;
     &:not(:last-child) {
-      margin-right: 5rem;
+      margin-right: 2rem;
     }
     input {
       display: none;

@@ -1,0 +1,9 @@
+@import '../../../style/sass/abstracts/variables';
+@import '../../../style/sass/abstracts/mixins';
+/*  */
+
+.courses-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
