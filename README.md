@@ -1,9 +1,7 @@
 
 
 # Startae -  Challenge: Frontend Developer
-[LINK](https://startae-team-test.netlify.com/)
-
-The application consists in listing the users of the Startaê team in card format
+[LINK](https://estudar-com-voce-test.netlify.com/courses)
 
 ### Built With
  - Webpack
@@ -11,6 +9,7 @@ The application consists in listing the users of the Startaê team in card forma
  - Redux (React Thunk)
  - SCSS
  - Jest
+ - Typescript
 
 ### Prerequisites
 Make sure you have Node installed on you machine. Open the application folder on the terminal and run:
@@ -59,4 +58,4 @@ Goals:
 - [x] Redux
 - [x] SASS
 - [x] CI
-- [x] Test converage on 100%
+- [x] Tests
