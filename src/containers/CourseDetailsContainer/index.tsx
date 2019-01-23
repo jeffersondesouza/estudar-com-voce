@@ -5,30 +5,42 @@ import { Link } from 'react-router-dom';
 import './style/style.scss';
 
 import CourseMidleware from '../../store/modules/course/middleware';
+import { selectCourse } from '../../store/modules/course/selectors';
+import { Course } from '../../models';
 
 
 export interface IProps {
-  dispatchLoadCourse(): void
+  dispatchLoad(id: number): void,
+  match: any,
+  selectedCourse: Course | null,
+  isLoadingCourse: boolean,
 }
 
 export class CourseDetailsContainer extends React.Component<IProps> {
 
   componentDidMount() {
-    this.props.dispatchLoadCourse();
+
+    this.props.dispatchLoad(+this.props.match.params.id);
   }
 
   render() {
-    const course = MOCK;
+    const { selectedCourse, isLoadingCourse } = this.props;
+    console.log(selectedCourse);
+    
     return (
       <div className="details">
         <div>
           <Link to="/cocurses" className="details__back">&larr;</Link>
         </div>
-        <h2 className="title details__title">
-          {course.name}
-          {course.highlight && <span className="details__highlight">(novo)</span>}
-        </h2>
-        <p className="details__description">{course.description}</p>
+        {(!isLoadingCourse && selectedCourse) &&
+          <div>
+            <h2 className="title details__title">
+              {selectedCourse.name}
+              {selectedCourse.highlight && <span className="details__highlight">(novo)</span>}
+            </h2>
+            <p className="details__description">{selectedCourse.description}</p>
+          </div>
+        }
       </div>
     )
   }
@@ -39,7 +51,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  dispatchLoadCourse: () => dispatch(CourseMidleware.loadCoursesRequest()),
+  dispatchLoad: (id: number) => dispatch(CourseMidleware.loadCourse(id)),
 });
 
 

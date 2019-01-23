@@ -5,7 +5,7 @@ export interface IState {
     courses: Course[],
     genericCourses: Course[],
     customCourses: Course[],
-    selectedCourseId: number | null,
+    selectedCourseId: any,
     selectedCourse: Course | null,
     isLoadingCourses: boolean,
     isLoadingCourse: boolean,

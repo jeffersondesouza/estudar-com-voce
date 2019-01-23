@@ -26,14 +26,14 @@ export default class FeedActions {
     static loadCourseRequest({ id }): ActionType {
         return {
             type: ActionsEnum.LOAD_COURSE_REQUEST,
-            payload: { courseId: id }
+            payload: id 
         }
     }
 
     static loadCourseSuccess({ course }): ActionType {
         return {
             type: ActionsEnum.LOAD_COURSE_SUCCESS,
-            payload: { course }
+            payload: course
         }
     }
 

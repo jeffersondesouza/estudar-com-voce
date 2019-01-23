@@ -1,5 +1,7 @@
 
 import * as selectos from './selectors';
+import { selectCourse } from './selectors/select-course';
+
 import { IState, InitialState } from './state'
 import ActionType from '../../../models/ActionType';
 
@@ -39,21 +41,23 @@ function feedReducer(state = InitialState, action: ActionType): IState {
 			}
 
 
-
-
 		case ActionsEnum.LOAD_COURSE_REQUEST:
+			console.log('selectedCourse', action.payload);
+
 			return {
 				...state,
 				selectedCourse: null,
-				selectedCourseId: action.payload.id,
+				selectedCourseId: action.payload,
 				isLoadingCourse: true,
 			}
 
 		case ActionsEnum.LOAD_COURSE_SUCCESS:
 
+			const selectedCourse = selectCourse(state.selectedCourseId, action.payload);
+
 			return {
 				...state,
-				selectedCourse: action.payload.course,
+				selectedCourse: selectedCourse,
 				isLoadingCourse: false,
 				error: null
 			}
