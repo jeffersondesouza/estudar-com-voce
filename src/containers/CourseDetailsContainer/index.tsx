@@ -25,7 +25,6 @@ export class CourseDetailsContainer extends React.Component<IProps> {
 
   render() {
     const { selectedCourse, isLoadingCourse } = this.props;
-    console.log(selectedCourse);
     
     return (
       <div className="details">

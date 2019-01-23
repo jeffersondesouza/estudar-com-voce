@@ -3,9 +3,10 @@
 /*  */
 
 .courses {
-  padding: 0 1rem;
   display: flex;
   flex-direction: column;
+  margin-bottom: 3rem;
+  padding: 0 1rem;
   &__title {
     color: $emperor;
     margin-bottom: 2rem;

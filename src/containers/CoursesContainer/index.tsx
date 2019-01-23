@@ -32,14 +32,15 @@ export class CoursesContainer extends React.Component<IProps> {
       ? target.checked
       : target.value;
 
-
-    this.props.dispatchFilterCourses({
-      name,
-      value,
-    });
-
-
+    this.props.dispatchFilterCourses({ name, value });
   }
+
+  renderCourses = ({ customCourses, genericCourses }) => (
+    <React.Fragment>
+      <CoursesList courses={customCourses} title="Materias Personalizadas sem faculdade" />
+      <CoursesList courses={genericCourses} title="Materias Gerais" />
+    </React.Fragment>
+  );
 
   render() {
     const { genericCourses, customCourses, isLoadingCourses } = this.props;
@@ -47,13 +48,7 @@ export class CoursesContainer extends React.Component<IProps> {
     return (
       <div className="courses-block">
         <Search onFilter={this.handleFilterCourses} />
-        {!isLoadingCourses &&
-          < CoursesList courses={customCourses} title="Materias Personalizadas sem faculdade" />
-        }
-        {!isLoadingCourses &&
-          <CoursesList courses={genericCourses} title="Materias Gerais" />
-        }
-        {/* <CoursesList courses={ResMock.filter(c => !c.generic)} title="Materias Gerais" /> */}
+        {!isLoadingCourses && this.renderCourses({ customCourses, genericCourses })}
       </div>
     )
   }

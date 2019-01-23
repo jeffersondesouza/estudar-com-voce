@@ -13,14 +13,17 @@ export interface IProps {
 export const CoursesList = (props: IProps) => (
   <div className="courses">
     <h2 className="title courses__title">{props.title}</h2>
-    <ul className="courses__list">
-      {
-        props.courses.map(course => (
-          <li key={course.id} className="courses__list-item">
-            <CourseComponent course={course} />
-          </li>
-        ))
-      }
-    </ul>
+    {props.courses.length ?
+      <ul className="courses__list">
+        {
+          props.courses.map(course => (
+            <li key={course.id} className="courses__list-item">
+              <CourseComponent course={course} />
+            </li>
+          ))
+        }
+      </ul>
+      : <p>Nenhum Curso encontrado</p>
+    }
   </div>
 );

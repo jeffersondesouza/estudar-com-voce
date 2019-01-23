@@ -42,7 +42,6 @@ function feedReducer(state = InitialState, action: ActionType): IState {
 
 
 		case ActionsEnum.LOAD_COURSE_REQUEST:
-			console.log('selectedCourse', action.payload);
 
 			return {
 				...state,
@@ -70,21 +69,19 @@ function feedReducer(state = InitialState, action: ActionType): IState {
 			}
 
 
-
 		case ActionsEnum.FILTER_COURSES:
+
 			const courseFilter = {
 				...state.courseFilter,
 				[action.payload.name]: action.payload.value
 			};
 
-			console.log(courseFilter, state.courses);
-
-
+			const courses = selectos.filterCourses(courseFilter, state.courses);
 
 			return {
 				...state,
-				customCourses: selectos.filterCustomCourses(state.courses),
-				genericCourses: selectos.filterGenericCourses(state.courses),
+				customCourses: selectos.filterCustomCourses(courses),
+				genericCourses: selectos.filterGenericCourses(courses),
 				courseFilter,
 			}
 

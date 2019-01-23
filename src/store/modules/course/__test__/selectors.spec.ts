@@ -177,13 +177,13 @@ describe('Courses:SELECTORS', () => {
 
     it('sould filter course by name and type custom', () => {
       const filerdCourses = filterCourses({ type: 'custom', course: "Álgebra Linear I" }, ALL_COURSES);
-      const expectedCourse = [CUSTOM[0]];
+      const expectedCourse = [CUSTOM[3], CUSTOM[10]];
       expect(filerdCourses).toEqual(expectedCourse);
     });
 
 
     it('sould filter course by name and type all', () => {
-      const filerdCourses = filterCourses({ type: 'all', course: "Cáculo" }, ALL_COURSES);
+      const filerdCourses = filterCourses({ type: 'all', course: "Cálculo" }, ALL_COURSES);
 
       expect(filerdCourses.length).toEqual(4);
     });

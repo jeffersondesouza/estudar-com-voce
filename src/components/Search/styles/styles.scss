@@ -4,15 +4,15 @@
 
 .search {
   padding: 0 1rem;
-  margin: 2rem 0 4rem;
+  margin: 2rem auto 4rem;
+  @include respond(phone) {
+    width: 40rem;
+  }
+  @include respond(tab) {
+    width: 60rem;
+  }
   &__input {
     margin: 0 auto 1rem;
-    @include respond(phone) {
-      width: 40rem;
-    }
-    @include respond(tab) {
-      width: 60rem;
-    }
     input {
       font-size: $font-size-default;
       padding-top: 1.5rem;
@@ -24,7 +24,7 @@
     }
   }
   &__filters {
-    @include abs-midle-align;
+    display: flex;
   }
   &__radio-label {
     @include abs-midle-align;
