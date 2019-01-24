@@ -1,15 +1,13 @@
-
-
-# Startae -  Challenge: Frontend Developer
+# estudar com Você -  Challenge: Frontend Developer
 [LINK](https://estudar-com-voce-test.netlify.com/courses)
 
 ### Built With
  - Webpack
  - React
- - Redux (React Thunk)
+ - Typescript
+ - Redux 
  - SCSS
  - Jest
- - Typescript
 
 ### Prerequisites
 Make sure you have Node installed on you machine. Open the application folder on the terminal and run:
@@ -35,7 +33,6 @@ The build command creates the ```dist``` folder creating the application bundle 
 ```shell
 npm run build
 ```
-
 
 ## Tests
 The application had use an BDD approach, so run the unit and integration test with thwe command:
